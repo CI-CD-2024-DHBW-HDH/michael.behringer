@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: ubuntu
+        image: ubuntu
+        command: ["/bin/bash", "-c", "echo 'Dieser Job gibt mir zwei Extra Punkte, yay'"]
+      restartPolicy: Never
+  backoffLimit: 4
